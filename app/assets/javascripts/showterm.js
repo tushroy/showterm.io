@@ -26,6 +26,7 @@ $(function () {
         terminal.refresh();
         terminal.open();
         Terminal.focus = null;
+        Terminal.cursorBlink = false;
         stopped = false;
         position = start = 0;
     }
@@ -77,7 +78,7 @@ $(function () {
         }
     });
 
-    $('.controls > a[url^=#]').click(function () {
+    $('.controls > a[href^=#]').click(function () {
         window.location.hash = this.href.split('#')[1];
         if (paused) {
             paused = false;
